@@ -1,0 +1,22 @@
+{
+  "name": "polygon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/js/main.js",
+  "scripts": {
+    "parcel": "parcel",
+    "build": "parcel build src/views/*.html",
+    "start": "parcel serve src/views/*.html"
+  },
+  "keywords": [],
+  "author": "Dinca Adrian",
+  "contributors": [
+    "Grigorescu Alexandru",
+    "Nitu Andrei"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.11.0",
+    "pixi.js": "^4.8.4"
+  }
+}
