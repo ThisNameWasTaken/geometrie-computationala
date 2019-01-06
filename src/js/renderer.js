@@ -7,6 +7,8 @@ let dotThickness = 10;
 let backgroundColor = 0x424242;
 let snapValue = 10;
 
+window.threshold = dotThickness;
+
 const app = new Application(window.innerWidth, window.innerHeight, {
     antialias: true,
     backgroundColor: backgroundColor,
@@ -28,10 +30,19 @@ app.view.addEventListener('click', event => {
         case 'polygon':
             usePolygonTool(event);
             break;
+        case 'erase':
+            console.log('erase');
+            useEraseTool();
+            break;
         default:
             break;
     }
 });
+
+function useEraseTool() {
+    polygonVertices = [];
+    app.stage.children = [];
+}
 
 function checkDotPlacement() {
     let polygonPoints;
@@ -42,7 +53,7 @@ function checkDotPlacement() {
         }
     }
 
-    const { x, y, radius } = app.stage.children[app.stage.children.length - 1].graphicsData[0].shape;
+    const { x, y } = app.stage.children[app.stage.children.length - 1].graphicsData[0].shape;
 
     let polygon = [];
     for (let i = 0; i < polygonPoints.length; i += 2) {
@@ -115,11 +126,9 @@ function drawPolygon(coords) {
     graphics.beginFill(polygonColor);
     let _coords = [];
     coords.forEach(coord => _coords.push(coord.x, coord.y));
-    console.log(_coords);
     graphics.drawPolygon([..._coords]);
     graphics.endFill();
     app.stage.addChild(graphics);
-    console.log('draw rect');
 }
 
 let redos = [];

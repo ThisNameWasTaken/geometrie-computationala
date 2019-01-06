@@ -8,8 +8,6 @@ document.querySelectorAll('.mdc-icon-button').forEach(icon => {
     new MDCRipple(icon).unbounded = true;
 });
 
-window.threshold = 10;
-
 let lastActiveToolIcon;
 
 function setActiveTool() {
