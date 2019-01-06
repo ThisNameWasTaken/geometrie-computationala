@@ -1,0 +1,28 @@
+@import "normalize.css/normalize.css";
+@import "@material/elevation/mdc-elevation";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/ripple/mdc-ripple";
+
+body {
+    overflow: hidden;
+}
+
+#menu {
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    background: #fff;
+    flex-direction: column;
+    z-index: 16;
+}
+
+.mdc-icon-button {
+    &--active {
+        color: $mdc-theme-primary;
+        @include mdc-states(primary);
+    }
+}

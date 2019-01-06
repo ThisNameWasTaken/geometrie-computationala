@@ -6,7 +6,8 @@
   "scripts": {
     "parcel": "parcel",
     "build": "parcel build src/views/*.html",
-    "start": "parcel serve src/views/*.html"
+    "start": "parcel serve src/views/*.html",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Dinca Adrian",
@@ -16,7 +17,19 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@material/elevation": "^0.41.0",
+    "@material/icon-button": "^0.42.0",
+    "@material/ripple": "^0.42.0",
+    "@material/theme": "^0.41.0",
+    "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.11.0",
     "pixi.js": "^4.8.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "sass": "^1.15.3"
   }
 }
