@@ -1,5 +1,8 @@
 import { Application, Graphics } from "pixi.js";
 import { Vertex } from './polygon';
+import { MDCSnackbar } from '@material/snackbar';
+
+const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 
 let polygonColor = 0xff9e22;
 let dotColor = 0x09af00;
@@ -45,6 +48,7 @@ function useEraseTool() {
 }
 
 function checkDotPlacement() {
+    console.log('checkDotPlacement');
     let polygonPoints;
     for (let i = app.stage.children.length - 2; i >= 0; i--) {
         if (app.stage.children[i].graphicsData[0].shape.type === 0) {
@@ -60,10 +64,14 @@ function checkDotPlacement() {
         polygon.push(new Vertex(polygonPoints[i], polygonPoints[i + 1]));
     }
 
-    console.log(new Vertex(x, y).getRelativePolygonPlacement(polygon));
+    const placement = new Vertex(x, y).getRelativePolygonPlacement(polygon);
+    snackbar.show({
+        message: placement,
+        timeout: 1000,
+    });
 }
 
-function usColorTool(event) {
+function useColorTool(event) {
     polygonVertices.forEach(vertex => app.stage.children.pop());
     polygonVertices = [];
 }

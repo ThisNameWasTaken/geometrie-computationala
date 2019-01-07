@@ -1,7 +1,10 @@
+$mdc-theme-secondary: #90ee02;
+
 @import "normalize.css/normalize.css";
 @import "@material/elevation/mdc-elevation";
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/ripple/mdc-ripple";
+@import "@material/snackbar/mdc-snackbar";
 
 body {
     overflow: hidden;
