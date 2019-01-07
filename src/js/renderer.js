@@ -141,17 +141,16 @@ window.addEventListener('keydown', event => {
         case 'Z':
             if (event.ctrlKey) {
                 if (event.altKey) {
-                    app.stage.addChild(redos.pop());
+                    redo();
                 } else {
-                    redos.push(app.stage.children.pop());
-                    polygonVertices.pop();
+                    undo();
                 }
             }
             break;
         case 'y':
         case 'Y':
             if (event.ctrlKey) {
-                app.stage.addChild(redos.pop());
+                redo();
             }
             break;
 
@@ -159,3 +158,12 @@ window.addEventListener('keydown', event => {
             break;
     }
 });
+
+function undo() {
+    redos.push(app.stage.children.pop());
+    polygonVertices.pop();
+};
+
+function redo() {
+    app.stage.addChild(redos.pop());
+}
