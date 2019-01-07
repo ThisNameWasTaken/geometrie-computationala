@@ -91,6 +91,8 @@ function usePolygonTool(event) {
         if (xDiff < snapValue && yDiff < snapValue) {
             polygonVertices.pop();
             polygonVertices.forEach(vertex => app.stage.children.pop());
+            // delete the dot
+            app.stage.children.pop();
             drawPolygon(polygonVertices);
             polygonVertices = [];
         }
