@@ -87,7 +87,7 @@ function acoperire(punct1, punct2, punct3) {
 
 (function() {
   let puncte = [
-    new Punct(0, 0),
+    undefined,
 
     // new Punct(1, 1),
     // new Punct(2, 2),
