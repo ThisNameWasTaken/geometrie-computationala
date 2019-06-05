@@ -1,0 +1,14 @@
+{
+  "name": "geometrie-computationala",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lab-4.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Adrian Dinca",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
