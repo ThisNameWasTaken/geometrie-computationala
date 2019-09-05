@@ -1,3 +1,7 @@
+// Se dau 4 puncte .
+// Sa se determine daca pozitia lui D fata de triunghiul ABCD.
+// Sa se determina daca patrulaterul este circumscriptabil sau nu.
+
 class Punct {
   /**
    *
@@ -56,10 +60,10 @@ class Triunghi {
 
 (function() {
   const puncte = [
-    new Punct(1, 1),
-    new Punct(8, 4),
-    new Punct(7, 3),
-    new Punct(2, 5)
+    new Punct(4, 0),
+    new Punct(2, 4),
+    new Punct(0, 3),
+    new Punct(0, 0)
   ];
 
   const unghi = Math.acos(
@@ -68,7 +72,7 @@ class Triunghi {
   );
 
   const asezareCerc =
-    unghi === 180
+    unghi >= 179 && unghi <= 181
       ? "pe cercul"
       : unghi > 180
       ? "in interiorul cercului"
@@ -82,7 +86,7 @@ class Triunghi {
     puncte.slice(0, 3)
   );
 
-  const eCircumscriptabil =
+  const eCircumscriptibil =
     puncte[0].distanta(puncte[1]) + puncte[2].distanta(puncte[3]) ===
     puncte[1].distanta(puncte[2]) + puncte[0].distanta(puncte[3]);
 
@@ -92,7 +96,7 @@ class Triunghi {
     "patrulaterul\n",
     puncte,
     "\n",
-    eCircumscriptabil ? "" : "NU",
-    "este circumscriptabil"
+    eCircumscriptibil ? "" : "NU",
+    "este circumscriptibil"
   );
 })();

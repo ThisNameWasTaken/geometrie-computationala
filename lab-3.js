@@ -1,3 +1,7 @@
+// Se dau 4 puncte.
+// Sa se determine daca segmentele se intersescteaza sau nu.
+// IMPORTANT: Sunt segmente NU drepte.
+
 class Punct {
   /**
    * @param {Number} x
@@ -61,10 +65,10 @@ class Punct {
   // const C = new Punct(1, 1);
   // const D = new Punct(3, 3);
 
-  const A = new Punct(1, 1);
-  const B = new Punct(3, 3);
-  const C = new Punct(1, 3);
-  const D = new Punct(3, 1);
+  const A = new Punct(0, 0);
+  const B = new Punct(2, 2);
+  const C = new Punct(1, 1);
+  const D = new Punct(3, 3);
 
   // const A = new Punct(2, 0);
   // const B = new Punct(5, 0);

@@ -1,3 +1,7 @@
+/**
+ * Acoperiri convexe
+ */
+
 class Punct {
   /**
    *
